@@ -25,7 +25,7 @@ require dirname(__FILE__) . '/header.html';
 
 <div class="projects-header page-header">
 	<h2 id="theColorYouLike">Web Tools开发者在线工具精品推荐</h2>
-		<p>以下在线工具都是不断精心开发而成，并且追求简洁实用。 希望能对您有帮助，谢谢！</p>
+	<p>以下在线工具都是不断精心开发而成，并且追求简洁实用。 希望能对您有帮助，谢谢！</p>
 </div>
 
 <div class="row">
