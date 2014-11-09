@@ -59,6 +59,7 @@ require dirname(__FILE__) . '/../header.html';
 	
 <br /><br />
 
+<?php if (isset($_POST['inputTime'])) { ?>
 <h3>猜你需要：</h3>
 <table class="table table-hover">
 	<tr>
@@ -80,6 +81,7 @@ require dirname(__FILE__) . '/../header.html';
 		<td><?php echo date('L', $timestamp) == 1 ? '闰年' : '不是闰年';?></td>
 	</tr>
 </table>
+<?php } ?>
 
 <br /><br />
 

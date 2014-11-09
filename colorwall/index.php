@@ -110,9 +110,7 @@ EOT;
 
 更多选择：
 <a href="http://tool.oschina.net/commons?type=3">RGB颜色对照表</a>&nbsp;&nbsp;
-<a href="http://tools.2345.com/rgbsj1.htm">2345RGB颜色表</a>&nbsp;&nbsp;
-<a href="http://rgb.pin5i.com/">在线颜色生成器</a>&nbsp;&nbsp;
-<a href="http://www.colorspire.com/">Create Color Schemes</a>
+<a href="http://www.w3school.com.cn/html/html_colornames.asp">HTML 颜色名</a>&nbsp;&nbsp;
 
 
 </div> <!-- row -->
