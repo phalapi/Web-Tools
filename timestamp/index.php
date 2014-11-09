@@ -13,6 +13,8 @@ header('Cache-control', 'max-age=36000');
 header('Expires', gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
 header('Last-Modified: '. gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
 
+date_default_timezone_set('Asia/Shanghai');
+
 $timestamp = $_SERVER['REQUEST_TIME'];
 $inputTime = '';
 
@@ -49,7 +51,7 @@ require dirname(__FILE__) . '/../header.html';
 			<div class="col-xs-4">
 			</div>
 			<div class="col-xs-4">
-				<input type="text" class="form-control" placeholder="请在这里输入时间戳，或者日期" name="inputTime" value="<?php echo $inputTime;?>">
+				<input type="text" class="form-control" placeholder="请在这里输入北京时区的时间戳，或者日期" name="inputTime" value="<?php echo $inputTime;?>">
 			</div>
 			<div class="col-xs-4">
 				<input type="submit" class="btn btn-success" value="智能转换" >
