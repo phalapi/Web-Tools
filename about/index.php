@@ -51,7 +51,9 @@ require WEB_TOOLS_ROOT . '/header.html';
 			<p>
 			如果您也拥有简单实用的在线工具，并且希望分享给更多的人使用，欢迎加入我们！<br/><br/>
 			您可以将代码提交到：<a href="https://git.oschina.net/dogstar/Web-Tools.git">https://git.oschina.net/dogstar/Web-Tools.git</a>，建议在dev分支上开发，以便管理 和发布。<br/><br/>
-			<a target="_blank" class="btn btn-success" href="http://git.oschina.net/dogstar/Web-Tools/wikis/home">我要加入</a><img src="http://webtools.qiniudn.com/WebTools.png" />
+			<a target="_blank" class="btn btn-warning" href="http://my.oschina.net/u/256338/blog/342431">我有建议</a>&nbsp;
+			<a target="_blank" class="btn btn-success" href="http://git.oschina.net/dogstar/Web-Tools/wikis/home">我要加入</a>
+			<img src="http://webtools.qiniudn.com/WebTools.png" />
 			</p>
 		</div>
 		<div class="col-xs-2">
