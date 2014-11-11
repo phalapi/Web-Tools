@@ -69,7 +69,7 @@ require WEB_TOOLS_ROOT . '/header.html';
 			<p>
 			欢迎对我们项目进行捐赠！您们的支持是我们前进的最大动力！<br/><br/>
 			联系人：dogstar<br/><br/>
-			邮&nbsp;&nbsp;箱：chanzonghuang@gmai.com<br/><br/>
+			邮&nbsp;&nbsp;箱：chanzonghuang@gmail.com<br/><br/>
 			</p>
 		</div>
 		<div class="col-xs-2">
