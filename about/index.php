@@ -2,13 +2,19 @@
 /**
  * 关于页面
  *
- * @author: dogstar 2014-11-09
+ * @author: dogstar 2014-11-14
  */
+?>
 
+<?php
+ /** ---------------------------------- PHP Handle -------------------------------**/
+?>
+
+<?php
 require_once dirname(__FILE__) . '/../common.php';
+?>
 
-header('Content-Type', 'text/html;charset=utf-8');
-
+<?php
 header('Cache-control', 'max-age=36000');
 header('Expires', gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
 header('Last-Modified: '. gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
@@ -16,7 +22,7 @@ header('Last-Modified: '. gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36
 ?> 
 
 <?php
- /** ---------------------------------- Template -------------------------------**/
+ /** ---------------------------------- HTML Template -------------------------------**/
 ?>
 
 <?php
@@ -27,6 +33,8 @@ require WEB_TOOLS_ROOT . '/header.html';
 	<h2>工具，从简单贴心开始！</h2>
 	<p>我们致力于提供简单实用、贴心智能的在线工具，以提高我们日常的开发效率。这些工具之所以有生气，因为我们都是开发者！</p>
 </div>
+
+<div class="row">
 
 <div class="row alert alert-info">
 	<h2>关于我们</h2>
@@ -78,6 +86,18 @@ require WEB_TOOLS_ROOT . '/header.html';
 	</div>
 </div>
 
+</div>
+
 <?php
 require WEB_TOOLS_ROOT . '/footer.html';
 ?>
+
+<?php
+ /** ---------------------------------- JS Functions -------------------------------**/
+?>
+<script type="text/javascript">
+/**
+ * TODO: 请在下面放置需要的JS函数
+ */
+
+</script>

@@ -1,14 +1,26 @@
 <?php
 /**
- * Web Tools
+ * Demo
  *
- * @author: dogstar 2014-11-08
+ * 虽然目前这种写法不是最好的，但可以先简单按以下格式来开发：
+ *
+ * 1、PHP处理
+ * 2、HTML输出
+ * 3、JS函数
+ *
+ * @author: dogstar 2014-11-14
  */
+?>
 
+<?php
+ /** ---------------------------------- PHP Handle -------------------------------**/
+?>
+
+<?php
 require_once dirname(__FILE__) . '/common.php';
+?>
 
-header('Content-Type', 'text/html;charset=utf-8');
-
+<?php
 header('Cache-control', 'max-age=36000');
 header('Expires', gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
 header('Last-Modified: '. gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
@@ -16,17 +28,18 @@ header('Last-Modified: '. gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36
 ?> 
 
 <?php
- /** ---------------------------------- Template -------------------------------**/
+ /** ---------------------------------- HTML Template -------------------------------**/
 ?>
 
 <?php
-require dirname(__FILE__) . '/header.html';
+require WEB_TOOLS_ROOT . '/header.html';
 ?>
 
 <div class="projects-header page-header">
 	<h2 id="theColorYouLike">Web Tools开发者在线工具精品推荐</h2>
 	<p>以下在线工具都是不断精心开发而成，并且追求简洁实用。 希望能对您有帮助，谢谢！</p>
 </div>
+
 
 <div class="row">
 
@@ -80,14 +93,24 @@ require dirname(__FILE__) . '/header.html';
                 <a href="<?php echo WEB_TOOLS_HOST . 'colortran/'; ?>" title="在线颜色转换" target="_blank" >在线颜色转换<br><small>by @dogstar</small></a>
               </h3>
               <p>
-              WebTools在线颜色转换：输入需要转换的颜色后，如果是RGB格式，系统将会转换成带#号的HEX；反之，则会转换成RGB。
-              </p>
-            </div>
-          </div>
+                 WebTools在线颜色转换：输入需要转换的颜色后，如果是RGB格式，系统将会转换成带#号的HEX；反之，则会转换成RGB。
+             </p>
+           </div>
         </div>
+    </div> 
 
-</div> <!-- row -->
+</div>
 
 <?php
-require dirname(__FILE__) . '/footer.html';
+require WEB_TOOLS_ROOT . '/footer.html';
 ?>
+
+<?php
+ /** ---------------------------------- JS Functions -------------------------------**/
+?>
+<script type="text/javascript">
+/**
+ * TODO: 请在下面放置需要的JS函数
+ */
+
+</script>
