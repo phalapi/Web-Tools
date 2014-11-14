@@ -119,8 +119,6 @@ function tranJColor() {
 	}
 }
 
-<script type="text/javascript">
-
 function updateColor(color) {
 	if (color.indexOf(',') < 0) {
 		return;
@@ -202,7 +200,5 @@ function HexToRGB(hex) {
     
 	return sColorChange.join(",");  
 }
-</script>
-
 </script>
 
