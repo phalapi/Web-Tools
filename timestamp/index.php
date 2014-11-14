@@ -1,14 +1,26 @@
 <?php
 /**
- * color wall
+ * Demo
  *
- * @author: dogstar 2014-11-04
+ * 虽然目前这种写法不是最好的，但可以先简单按以下格式来开发：
+ *
+ * 1、PHP处理
+ * 2、HTML输出
+ * 3、JS函数
+ *
+ * @author: dogstar 2014-11-14
  */
+?>
 
+<?php
+ /** ---------------------------------- PHP Handle -------------------------------**/
+?>
+
+<?php
 require_once dirname(__FILE__) . '/../common.php';
+?>
 
-header('Content-Type', 'text/html;charset=utf-8');
-
+<?php
 header('Cache-control', 'max-age=36000');
 header('Expires', gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
 header('Last-Modified: '. gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
@@ -33,11 +45,11 @@ $date = date('Y-m-d H:i:s', $timestamp);
 ?> 
 
 <?php
- /** ---------------------------------- Template -------------------------------**/
+ /** ---------------------------------- HTML Template -------------------------------**/
 ?>
 
 <?php
-require dirname(__FILE__) . '/../header.html';
+require WEB_TOOLS_ROOT . '/header.html';
 ?>
 
 <div class="projects-header page-header">
@@ -91,7 +103,17 @@ require dirname(__FILE__) . '/../header.html';
 
 </div> <!-- row -->
 
+<?php
+require WEB_TOOLS_ROOT . '/footer.html';
+?>
 
 <?php
-require dirname(__FILE__) . '/../footer.html';
+ /** ---------------------------------- JS Functions -------------------------------**/
 ?>
+<script type="text/javascript">
+/**
+ * TODO: 请在下面放置需要的JS函数
+ */
+
+</script>
+

@@ -1,14 +1,20 @@
 <?php
 /**
- * color wall
+ * 在线颜色转换
  *
  * @author: dogstar 2014-11-04
  */
+?>
 
+<?php
+ /** ---------------------------------- PHP Handle -------------------------------**/
+?>
+
+<?php
 require_once dirname(__FILE__) . '/../common.php';
+?>
 
-header('Content-Type', 'text/html;charset=utf-8');
-
+<?php
 header('Cache-control', 'max-age=36000');
 header('Expires', gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
 header('Last-Modified: '. gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
@@ -36,7 +42,7 @@ function rgb2hex($rgb) {
 ?> 
 
 <?php
- /** ---------------------------------- Template -------------------------------**/
+ /** ---------------------------------- HTML Template -------------------------------**/
 ?>
 
 <?php
@@ -79,6 +85,14 @@ require WEB_TOOLS_ROOT . '/header.html';
 
 </div> <!-- row -->
 
+<?php
+require WEB_TOOLS_ROOT . '/footer.html';
+?>
+
+<?php
+ /** ---------------------------------- JS Functions -------------------------------**/
+?>
+
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript">
 function tranJColor() {
@@ -98,6 +112,8 @@ function tranJColor() {
 		updateColor(HexToRGB('#' + color));
 	}
 }
+
+<script type="text/javascript">
 
 function updateColor(color) {
 	if (color.indexOf(',') < 0) {
@@ -182,6 +198,5 @@ function HexToRGB(hex) {
 }
 </script>
 
-<?php
-require WEB_TOOLS_ROOT . '/footer.html';
-?>
+</script>
+
