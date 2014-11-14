@@ -75,7 +75,7 @@ require WEB_TOOLS_ROOT . '/header.html';
 	<div class="row">
 		<div class="col-xs-10">
 			<p>
-			欢迎对我们项目进行捐赠！您们的支持是我们前进的最大动力！<br/><br/>
+			欢迎对我们项目进行捐赠！以便我们能拥有更好的服务器和资源为更多的开发者服务！同时您们的支持是我们前进的最大动力！<br/><br/>
 			联系人：dogstar<br/><br/>
 			邮&nbsp;&nbsp;箱：chanzonghuang@gmail.com<br/><br/>
 			</p>

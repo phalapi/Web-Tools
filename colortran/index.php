@@ -15,10 +15,6 @@ require_once dirname(__FILE__) . '/../common.php';
 ?>
 
 <?php
-header('Cache-control', 'max-age=36000');
-header('Expires', gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
-header('Last-Modified: '. gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
-
 $hex = '#666666';
 $rbg = hex2rgb($hex);
 
@@ -50,7 +46,7 @@ require WEB_TOOLS_ROOT . '/header.html';
 ?>
 
 <div class="projects-header page-header">
-	<h2 id="theColorYouLike"><?php echo $rbg;?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $hex;?></h2>
+	<h2 id="theColorYouLike">请输入</h2>
 	<p>请在下面输入您需要转换的颜色，如果是RGB格式，系统将会转换成带#号的HEX；反之，则会转换成RGB。</p>
 </div>
 
@@ -66,6 +62,16 @@ require WEB_TOOLS_ROOT . '/header.html';
 				<button onClick="tranJColor()" class="btn btn-success" />智能转换</button>
 			</div>
 		</form>
+    </div>
+
+    <br />
+	
+	<div class="row">
+			<div class="col-xs-4">
+			</div>
+			<div class="col-xs-4">
+            示例：RGB(102,102,102) &nbsp;&nbsp;&nbsp;或 &nbsp;&nbsp;&nbsp; #666666
+			</div>
 	</div>
 	
 <br /><br />

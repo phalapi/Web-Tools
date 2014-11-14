@@ -63,11 +63,15 @@ require WEB_TOOLS_ROOT . '/header.html';
     <div class="row">
         <div class="well" id="tranJsonStr"><?php echo !empty($jsonStr) ? $jsonStr : '这里将会实时显示结果'; ?></div>
     </div>
+
+    <br/ >
+示例：{"ret":0,"data":{"title":"Hello Wolrd","content":"Welcome to use Web Tools!","verion":"1.0.0","time":1415982826},"msg":""}
+
     <br /><br />
 
     如果不行：<input type="submit" class="btn btn-success btn-sm" value="智能转换" >
 </form>
-<br /><br />
+<br />
 
 更多选择：
 <a href="http://www.kjson.com/jsonparser/">JSON在线视图</a>&nbsp;&nbsp;

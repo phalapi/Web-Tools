@@ -1,12 +1,6 @@
 <?php
 /**
- * Demo
- *
- * 虽然目前这种写法不是最好的，但可以先简单按以下格式来开发：
- *
- * 1、PHP处理
- * 2、HTML输出
- * 3、JS函数
+ * 在线时间戳转换
  *
  * @author: dogstar 2014-11-14
  */
@@ -21,10 +15,6 @@ require_once dirname(__FILE__) . '/../common.php';
 ?>
 
 <?php
-header('Cache-control', 'max-age=36000');
-header('Expires', gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
-header('Last-Modified: '. gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
-
 date_default_timezone_set('Asia/Shanghai');
 
 $timestamp = $_SERVER['REQUEST_TIME'];
@@ -53,7 +43,7 @@ require WEB_TOOLS_ROOT . '/header.html';
 ?>
 
 <div class="projects-header page-header">
-	<h2 id="theColorYouLike"><?php echo $date;?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $timestamp;?></h2>
+	<h2 id="theColorYouLike"><?php echo isset($_POST['inputTime']) ? $date . '     ' . $timestamp : '请输入';?></h2>
 	<p>请在下面输入您需要转换的时间，如果是时间戳，系统将会转换成日期；反之，则会转换成时间戳。</p>
 </div>
 
@@ -69,6 +59,16 @@ require WEB_TOOLS_ROOT . '/header.html';
 				<input type="submit" class="btn btn-success" value="智能转换" >
 			</div>
 		</form>
+	</div>
+
+    <br />
+
+	<div class="row">
+			<div class="col-xs-4">
+			</div>
+			<div class="col-xs-4">
+                示例：2014-11-11&nbsp; 00:00:00&nbsp;&nbsp;&nbsp; 或 &nbsp;&nbsp;1415635200
+			</div>
 	</div>
 	
 <br /><br />
