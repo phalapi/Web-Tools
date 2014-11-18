@@ -126,7 +126,7 @@ function dumpJson(obj, level) {
 		content += suffix;
 		//alert(content);
 	}
-	rs += content.substr(0, content.length - suffix.length) + prefix + '<br />}';
+	rs += prefix + content.substr(0, content.length - suffix.length) + '<br />}';
 	
 	return rs;
 }
