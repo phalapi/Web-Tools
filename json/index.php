@@ -55,21 +55,19 @@ require WEB_TOOLS_ROOT . '/header.html';
 <form action="" method="POST">
     <div class="row">
         <div class="row">
-            <textarea class="form-control" rows="5" onKeyUp="tranJson();" id="inputJson" name="inputJson" ><?php echo $inputJson;?></textarea>
+            <textarea class="form-control" rows="5" onkeyup="tranJson();" id="inputJson" name="inputJson" ><?php echo $inputJson;?></textarea>
         </div>
     </div>
     <br /><br />
 
     <div class="row">
-        <div class="well" id="tranJsonStr"><?php echo !empty($jsonStr) ? $jsonStr : '这里将会实时显示结果'; ?></div>
+        <textarea class="well"  id="formatJson" name="" id="" style="width: 100%;height:100%;overflow-y:visible;">这里将会实时显示结果</textarea>
     </div>
 
     <br/ >
-示例：{"ret":0,"data":{"title":"Hello Wolrd","content":"Welcome to use Web Tools!","verion":"1.0.0","time":1415982826},"msg":""}
-
+示例：{"ret":0,"data":{"title":"Hello World","content":"Welcome to use Web Tools!","verion":"1.0.0","time":1415982826},"msg":""}
     <br /><br />
 
-    如果不行：<input type="submit" class="btn btn-success btn-sm" value="智能转换" >
 </form>
 <br />
 
@@ -82,59 +80,61 @@ require WEB_TOOLS_ROOT . '/header.html';
 <script type="text/javascript">
 function tranJson() {
 	var str = $("#inputJson").val();
-	if (str == '') {
-		str = $("#inputJson").text();
-	}
-	if (str == '') {
-		return;
-	}
-
-	var obj = JSON.parse(str);
-
-	var rs = dumpJson(obj, 0);
-
-	$("#tranJsonStr").html(rs);
+    var result = '';
+    var formatJsonBox = $('#formatJson');
+    formatJsonBox.css('height','auto');
+    try{
+        if (str.length > 0) {
+            var obj = JSON.parse(str);
+            result = formatJson(obj, '', false);
+            formatJsonBox.val(result);
+            formatJsonBox.height(formatJsonBox[0].scrollHeight);
+        } else {
+            formatJsonBox.val('');
+        }
+    }catch(e){
+        result = 'Valide JSON String';
+        formatJsonBox.val(result);
+    }
 }
 
-function dumpJson(obj, level) {
-	var prefix = '';
-	for (var i = 0; i < level * 5; i ++) {
-		prefix += '&nbsp;';
-	}
-	
-	var rs = '{<br />';
-	var content = '';
-	var suffix = ',<br />';
-	for (var item in obj) {
-		content += prefix + '"' + item + '":';
-		
-		var value = obj[item];
-		
-		if (typeof value == 'string') {
-			content += '"' + html2Escape(value) + '"';
-		} else if (typeof value == 'number') {
-			content += value;
-		} else if (typeof value == 'boolean') {
-			content += (value ? 'true' : 'false');
-		} else if (typeof value == 'object') {
-			content += dumpJson(value, level + 1);
-		} else if (typeof value == 'null') {
-			content += 'null';
-		} else if (typeof value == 'undefined') {
-		}
-
-		content += suffix;
-		//alert(content);
-	}
-	rs += content.substr(0, content.length - suffix.length) + '<br />' + prefix + '}';
-	
-	return rs;
+function formatJson(res, space, isNodeFromArr)
+{
+    var resStr = '';
+    var insideSpace = space + "    ";
+    isNodeFromArr = isNodeFromArr == 'undefined' ? true : isNodeFromArr;
+    if (res instanceof Array) {
+        resStr += isNodeFromArr ? space + "[\n" : "[\n";
+        for (var i = 0; i < res.length; ++i) {
+            if (res[i] instanceof Object || res[i] instanceof Array) {
+                resStr += formatJson(res[i], space + "    ", true) + ",\n";
+            } else {
+                resStr += insideSpace + "\"" + res[i] + "\",\n";
+            }
+        }
+        if (res.length > 0) {
+            resStr = resStr.substr(0, resStr.length - 2)  + "\n";;
+        }
+        resStr += space + "]";
+    } else if (res instanceof Object) {
+        resStr += isNodeFromArr ? space + "{\n" : "{\n";
+        for (var k in res) {
+            resStr += insideSpace + "\"" + k + "\": ";
+            if (res[k] instanceof Object || res[k] instanceof Array) {
+                resStr += formatJson(res[k], space + "    ", false);
+            } else {
+                resStr += "\"" + res[k] + "\"";
+            }
+            resStr += ",\n";
+        }
+        if (res) {
+            resStr = resStr.substr(0, resStr.length - 2) + "\n";
+        }
+        resStr += space + "}";
+    }
+    return resStr;
 }
 
-//普通字符转换成转意符
-function html2Escape(sHtml) {
-    return sHtml.replace(/[<>&"]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];});
-}
 </script>
 
 <?php
