@@ -2,3 +2,8 @@
 
 .settings
 .settings/*
+
+.project
+.buildpath
+
+
