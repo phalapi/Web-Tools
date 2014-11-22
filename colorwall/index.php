@@ -30,6 +30,9 @@ define('TYPE_NORMAL', 1);
 define('TYPE_SIMPLE', 2);
 define('TYPE_HEAVY', 3);
 
+define('COL_NUM', 10);
+define('ROW_NUM', 10);
+
 $type = isset($_GET['type']) ? intval($_GET['type']) : TYPE_DEFAULT;
 if ($type == TYPE_DEFAULT) {
 	$types = array(TYPE_NORMAL, TYPE_SIMPLE, TYPE_HEAVY);
@@ -48,23 +51,25 @@ if ($type == TYPE_SIMPLE || $type == TYPE_HEAVY) {
 	  $highletters = array("0","1","2","4","6","8");	
 	}
 
-	for($i=1; $i< 15; $i++){
+	for($i=1; $i< ROW_NUM; $i++){
 		$colors[$i]  = array();
-		for($j=1;$j<15;$j++){
+		for($j=1;$j<COL_NUM;$j++){
 			$colors[$i][] = genRandColor($highletters);
 		}
 	}
 } else {
 	$baseColors = include dirname(__FILE__) . '/colors.php';
 	$allColors = $baseColors;
-	$needMoreCount = (15 * 15) - count($baseColors);
+	$needMoreCount = (ROW_NUM * COL_NUM) - count($baseColors);
 	while ($needMoreCount > 0) {
 		$allColors[] = $baseColors[$needMoreCount];
 		$needMoreCount --;
 	}
 	shuffle($allColors);
+	$allColors = array_slice($allColors, 0, ROW_NUM * COL_NUM);
+	
 	foreach ($allColors as $key => $val) {
-		$colors[intval($key / 15)][$key % 15] = $val;
+		$colors[intval($key / ROW_NUM)][$key % COL_NUM] = $val;
 	}
 }
 
@@ -97,7 +102,7 @@ require WEB_TOOLS_ROOT . '/header.html';
 <div class="row">
 
 <!-- <table style="width:960px;height:600px;"> -->
-<table class="table" style="height:600px;">
+<table class="table" style="height:500px;">
 <?php
 foreach ($colors as $colorArr) {
     echo "<tr>\n";
@@ -114,9 +119,9 @@ EOT;
 
 <br />
 切换至：
-<a href="<?php echo WEB_TOOLS_HOST . 'colorwall/?type=', TYPE_NORMAL; ?>">精选版</a>&nbsp;&nbsp;
-<a href="<?php echo WEB_TOOLS_HOST . 'colorwall/?type=', TYPE_SIMPLE; ?>">简约版</a>&nbsp;&nbsp;
-<a href="<?php echo WEB_TOOLS_HOST . 'colorwall/?type=', TYPE_HEAVY; ?>">深沉版</a>
+<a href="<?php echo '/colorwall/?type=', TYPE_NORMAL; ?>">精选版</a>&nbsp;&nbsp;
+<a href="<?php echo '/colorwall/?type=', TYPE_SIMPLE; ?>">简约版</a>&nbsp;&nbsp;
+<a href="<?php echo '/colorwall/?type=', TYPE_HEAVY; ?>">深沉版</a>
 
 <br /><br />
 
