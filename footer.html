@@ -1,8 +1,33 @@
+  
+	<!-- 广告位 -->
+	<br/>
+  <div class="row">
+  	<?php
+  	$ads = array(
+		array('link' => '#', 'pic' => 'http://webtools.qiniudn.com/ad1.jpg'),
+		array('link' => '#', 'pic' => 'http://webtools.qiniudn.com/ad2.jpg'),
+		array('link' => '#', 'pic' => 'http://webtools.qiniudn.com/ad3.jpg'),
+		array('link' => '#', 'pic' => 'http://webtools.qiniudn.com/ad5.jpg'),
+		array('link' => '#', 'pic' => 'http://webtools.qiniudn.com/ad6.jpg'),
+		array('link' => '#', 'pic' => 'http://webtools.qiniudn.com/ad8.jpg'),
+		array('link' => '#', 'pic' => 'http://webtools.qiniudn.com/ad9.jpg'),
+		array('link' => '#', 'pic' => 'http://webtools.qiniudn.com/ad11.jpg'),
+		array('link' => '#', 'pic' => 'http://webtools.qiniudn.com/ad12.jpg'),
+		array('link' => '#', 'pic' => 'http://webtools.qiniudn.com/ad13.jpg'),
+	);
 
+	shuffle($ads);
+	$ad = array_shift($ads);
+  	?>
+  	<p align="center"><a href="<?=$ad['link'];?>"><img src="<?=$ad['pic']?>"></a></p>
+  </div>
+  
 </div><!-- /.container -->
 
+  
  <footer class="footer ">
   <div class="container">
+	  
     <div class="row footer-top">
       <div class="col-sm-6 col-lg-6">
         <h4>
@@ -15,7 +40,7 @@
           <div class="col-xs-3">
             <h4>关于</h4>
             <ul class="list-unstyled">
-              <li><a href="<?php echo WEB_TOOLS_HOST, 'about/'; ?>">关于我们</a></li>
+              <li><a href="http://my.oschina.net/u/256338/blog/342431">我有建议</a></li>
               <li><a href="<?php echo WEB_TOOLS_HOST, 'about/'; ?>">加入我们</a></li>
               <li><a href="<?php echo WEB_TOOLS_HOST, 'about/'; ?>">广告合作</a></li>
             </ul>
