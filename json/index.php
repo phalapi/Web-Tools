@@ -48,7 +48,7 @@ require WEB_TOOLS_ROOT . '/header.html';
 
 <div class="projects-header page-header">
     <h2>请输入</h2>
-    <p>请在下面输入您需要转换的json串 ，本地会实时转换；如果不行，请尝试<strong>智能转换</strong>。</p>
+    <p>请在下面输入您需要转换的json串 ，本地会实时转换。</p>
 </div>
 
 <div class="row">
