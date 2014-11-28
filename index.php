@@ -45,7 +45,7 @@ require WEB_TOOLS_ROOT . '/header.html';
 
       	<div class="col-sm-6 col-md-4 col-lg-3 ">
           <div class="thumbnail">
-            <a href="<?php echo WEB_TOOLS_HOST . 'colorwall/'; ?>" title="Bootstrap 编码规范" target="_blank"><img class="lazy" src="http://webtools.qiniudn.com/index_thumb_color_wall.jpg" width="300" height="150" alt="Color Wall"></a>
+            <a href="<?php echo WEB_TOOLS_HOST . 'colorwall/'; ?>" title="Bootstrap 编码规范" ><img class="lazy" src="http://webtools.qiniudn.com/index_thumb_color_wall.jpg" width="300" height="150" alt="Color Wall"></a>
             <div class="caption">
               <h3> 
                 <a href="<?php echo WEB_TOOLS_HOST . 'colorwall/'; ?>" title="颜色墙" >在线颜色墙<br><small>by @dogstar</small></a>
@@ -59,7 +59,7 @@ require WEB_TOOLS_ROOT . '/header.html';
         
         <div class="col-sm-6 col-md-4 col-lg-3 ">
           <div class="thumbnail">
-            <a href="<?php echo WEB_TOOLS_HOST . 'timestamp/'; ?>" title="在线时间戳" target="_blank"><img class="lazy" src="http://webtools.qiniudn.com/index_thumb_timestamp_v2.jpg" width="300" height="150" alt="Color Wall"></a>
+            <a href="<?php echo WEB_TOOLS_HOST . 'timestamp/'; ?>" title="在线时间戳"><img class="lazy" src="http://webtools.qiniudn.com/index_thumb_timestamp_v2.jpg" width="300" height="150" alt="Color Wall"></a>
             <div class="caption">
               <h3> 
                 <a href="<?php echo WEB_TOOLS_HOST . 'colorwall/'; ?>" title="时间戳" >在线时间戳<br><small>by @dogstar</small></a>
@@ -73,7 +73,7 @@ require WEB_TOOLS_ROOT . '/header.html';
         
         <div class="col-sm-6 col-md-4 col-lg-3 ">
           <div class="thumbnail">
-            <a href="<?php echo WEB_TOOLS_HOST . 'json/'; ?>" title="在线JSON解析" target="_blank"><img class="lazy" src="http://webtools.qiniudn.com/index_thumb_v2.jpg" width="300" height="150" alt="Color Wall"></a>
+            <a href="<?php echo WEB_TOOLS_HOST . 'json/'; ?>" title="在线JSON解析" ><img class="lazy" src="http://webtools.qiniudn.com/index_thumb_v2.jpg" width="300" height="150" alt="Color Wall"></a>
             <div class="caption">
               <h3> 
                 <a href="<?php echo WEB_TOOLS_HOST . 'json/'; ?>" title="在线JSON解析" >在线JSON解析<br><small>by @dogstar</small></a>
@@ -87,7 +87,7 @@ require WEB_TOOLS_ROOT . '/header.html';
         
         <div class="col-sm-6 col-md-4 col-lg-3 ">
           <div class="thumbnail">
-            <a href="<?php echo WEB_TOOLS_HOST . 'colortran/'; ?>" title="在线颜色转换" target="_blank"><img class="lazy" src="http://webtools.qiniudn.com/index_thumb_colortran_v2.jpg" width="300" height="150" alt="Color Wall"></a>
+            <a href="<?php echo WEB_TOOLS_HOST . 'colortran/'; ?>" title="在线颜色转换" ><img class="lazy" src="http://webtools.qiniudn.com/index_thumb_colortran_v2.jpg" width="300" height="150" alt="Color Wall"></a>
             <div class="caption">
               <h3> 
                 <a href="<?php echo WEB_TOOLS_HOST . 'colortran/'; ?>" title="在线颜色转换" >在线颜色转换<br><small>by @dogstar</small></a>
