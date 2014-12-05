@@ -109,7 +109,7 @@ function formatJson(res, space, isNodeFromArr)
             if (res[i] instanceof Object || res[i] instanceof Array) {
                 resStr += formatJson(res[i], space + "    ", true) + ",\n";
             } else {
-                resStr += insideSpace + "\"" + res[i] + "\",\n";
+                resStr += insideSpace +  parseParam(res[i]) + ",\n";
             }
         }
         if (res.length > 0) {
@@ -123,7 +123,7 @@ function formatJson(res, space, isNodeFromArr)
             if (res[k] instanceof Object || res[k] instanceof Array) {
                 resStr += formatJson(res[k], space + "    ", false);
             } else {
-                resStr += "\"" + res[k] + "\"";
+                resStr += parseParam(res[k]);
             }
             resStr += ",\n";
         }
@@ -133,6 +133,19 @@ function formatJson(res, space, isNodeFromArr)
         resStr += space + "}";
     }
     return resStr;
+}
+
+function parseParam(param)
+{
+    switch(typeof(param)){
+        case 'string' : 
+            return '"' + param + '"';
+            break;
+        case 'number' :
+        case 'boolean':
+            return param;
+    }
+    return '';
 }
 
 </script>
