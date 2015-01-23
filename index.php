@@ -10,28 +10,17 @@
  *
  * @author: dogstar 2014-11-14
  */
-?>
 
-<?php
  /** ---------------------------------- PHP Handle -------------------------------**/
-?>
 
-<?php
 require_once dirname(__FILE__) . '/common.php';
-?>
 
-<?php
 header('Cache-control', 'max-age=36000');
 header('Expires', gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
 header('Last-Modified: '. gmdate('D, d M Y H:i:s', $_SERVER['REQUEST_TIME'] + 36000) . ' GMT');
 
-?> 
-
-<?php
  /** ---------------------------------- HTML Template -------------------------------**/
-?>
 
-<?php
 require WEB_TOOLS_ROOT . '/header.html';
 ?>
 
