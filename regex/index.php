@@ -71,16 +71,16 @@ require WEB_TOOLS_ROOT . '/header.html';
     <div class="row">
         <form action="" class="form-inline" role="form">
             <div class="form-group">
-                <input type="checkbox" id="ignore-case">
-                <label for="ignore-case">不区分大小写</label>
-            </div>&nbsp;&nbsp;
-            <div class="form-group">
                 <input type="checkbox" checked id="match-all">
                 <label for="match-all">全局匹配</label>
             </div>&nbsp;&nbsp;
             <div class="form-group">
-                <input type="checkbox" checked id="show-result">
+                <input type="checkbox" id="show-result">
                 <label for="show-result">显示match结果</label>
+            </div>&nbsp;&nbsp;
+            <div class="form-group">
+                <input type="checkbox" id="ignore-case">
+                <label for="ignore-case">不区分大小写</label>
             </div>&nbsp;&nbsp;
         </form>
         <textarea id="reg-exp" class="form-control" placeholder="请输入正则表达式" name="" rows="5"></textarea>
@@ -92,7 +92,7 @@ require WEB_TOOLS_ROOT . '/header.html';
     </div>
     <p/>
     <div class="row">
-        <pre id ="reg-result">显示匹配结果</pre>
+        <pre id ="reg-result" style="display:none">显示匹配结果</pre>
     </div>
 </div>
 
@@ -101,14 +101,16 @@ require WEB_TOOLS_ROOT . '/header.html';
 <script type="text/javascript">
     $(document).ready(function(){
         //自适应宽度
-        $('#reg-text').show().width($('#reg-exp').width());
+        $('#reg-text').width($('#reg-exp').width());
         $('#reg-text-bg').width($('#reg-exp').width());
         $(window).resize(function(){
             $('#reg-text').width($('#reg-exp').width());
             $('#reg-text-bg').width($('#reg-exp').width());
         });
         //
-        $('#reg-exp').bind('keyup', function(){ match(); });
+        $('#reg-exp').bind('keyup', function(){ 
+            match(); 
+        });
         $('#reg-text').bind('keyup', function(){ 
             var scrollHeight = $(this)[0].scrollHeight;
             if ($(this).outerHeight() < scrollHeight) {
@@ -137,7 +139,7 @@ require WEB_TOOLS_ROOT . '/header.html';
             return result;
         }
         //
-        var match = function (regex, text){
+        var match = function (){
             var regExStr = $('#reg-exp').val();
             var regText = $('#reg-text').val();
             if (!regExStr || !regText) {
@@ -148,10 +150,11 @@ require WEB_TOOLS_ROOT . '/header.html';
             var map = {
                 '&' : '&amp', //必须第一个替换
                 '<' : '&lt',
-                '>' : '&gt'
+                '>' : '&gt',
+                '"' : '&quot'
             };
 
-            regExStr = '/' + replaceByMap(map, regExStr) + '/';
+            regExStr = '/' + regExStr + '/';
 
             if ($('#match-all').is(':checked') == true) {
                 regExStr += 'g';
@@ -159,10 +162,13 @@ require WEB_TOOLS_ROOT . '/header.html';
             if ($('#ignore-case').is(':checked') == true) {
                 regExStr += 'i';
             }
-            var regEx = eval(regExStr);
 
             try{
+                var regEx = eval(regExStr);
                 var result = regText.match(regEx);
+                
+                regEx = eval(replaceByMap(map, regExStr));
+
                 var i = 0;
                 var regTextBg = replaceByMap(map, regText).replace(regEx, function(str){
                     if (i++ % 2 == 0) {
@@ -170,13 +176,33 @@ require WEB_TOOLS_ROOT . '/header.html';
                     } else {
                         return '<i>' +  str + '</i>';
                     }
-                }).replace(/&amp|&lt|&gt/g, '_');
+                }).replace(/&amp|&lt|&gt|&quot/g, '_');
                 $('#reg-text-bg').html(regTextBg);
                 $('#reg-result').text(JSON.stringify(result)).html();
             } catch(e) {
+                $('#reg-text-bg').html('');
                 $('#reg-result').html('Invalide RegExp');
             }
         }
+
+        //初使化
+        var firstFocus = true;
+        var defaultRegExStr = '^(\\w+\\.){3}\\w+$';
+        var defaultRegExText = 'webtools.oschina.mopaas.com';
+
+        $('#reg-exp').focus(function(){
+            if (firstFocus === false) {
+                return;
+            }
+            firstFocus = false;
+            $('#reg-exp').html('');
+            $('#reg-text').html('');
+            match();            
+        });
+
+        $('#reg-exp').html(defaultRegExStr);
+        $('#reg-text').html(defaultRegExText);
+        match();
     });
 </script>
 
