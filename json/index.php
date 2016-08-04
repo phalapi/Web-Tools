@@ -89,11 +89,12 @@ function tranJson() {
             result = formatJson(obj, '', false);
             formatJsonBox.val(result);
             formatJsonBox.height(formatJsonBox[0].scrollHeight);
+            formatJsonBox.css('max-height',formatJsonBox[0].scrollHeight);
         } else {
             formatJsonBox.val('');
         }
     }catch(e){
-        result = 'Valide JSON String';
+        result = 'Invalide JSON String';
         formatJsonBox.val(result);
     }
 }
