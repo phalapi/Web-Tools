@@ -67,7 +67,7 @@ require WEB_TOOLS_ROOT . '/header.html';
 			<div class="col-xs-4">
 			</div>
 			<div class="col-xs-4">
-                示例：2014-11-11&nbsp; 00:00:00&nbsp;&nbsp;&nbsp; 或 &nbsp;&nbsp;1415635200
+                示例：<?php echo date('Y-m-d H:i:s'); ?>&nbsp;&nbsp;&nbsp; 或 &nbsp;&nbsp;<?php echo time(); ?>
 			</div>
 	</div>
 	
