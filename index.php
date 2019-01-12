@@ -51,7 +51,7 @@ require WEB_TOOLS_ROOT . '/header.html';
             <a href="<?php echo WEB_TOOLS_HOST . 'timestamp/'; ?>" title="在线时间戳"><img class="lazy" src="http://webtools.qiniudn.com/index_thumb_timestamp_v2.jpg" width="300" height="150" alt="Color Wall"></a>
             <div class="caption">
               <h3> 
-                <a href="<?php echo WEB_TOOLS_HOST . 'colorwall/'; ?>" title="时间戳" >在线时间戳<br><small>by @dogstar</small></a>
+                <a href="<?php echo WEB_TOOLS_HOST . 'timestamp/'; ?>" title="时间戳" >在线时间戳<br><small>by @dogstar</small></a>
               </h3>
               <p>
               WebTools在线时间戳：如果是时间戳，系统将会转换成日期；反之，则会转换成时间戳。
