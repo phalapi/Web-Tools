@@ -34,7 +34,7 @@ require WEB_TOOLS_ROOT . '/header.html';
 
       	<div class="col-sm-6 col-md-4 col-lg-3 ">
           <div class="thumbnail">
-            <a href="<?php echo WEB_TOOLS_HOST . 'colorwall/'; ?>" title="Bootstrap 编码规范" ><img class="lazy" src="http://webtools.qiniudn.com/index_thumb_color_wall.jpg" width="300" height="150" alt="Color Wall"></a>
+            <a href="<?php echo WEB_TOOLS_HOST . 'colorwall/'; ?>" title="Bootstrap 编码规范" ><img class="lazy" src="http://cdn7.okayapi.com/89E670FD80BA98E7F7D7E81688123F32_20190612235705_7cfbe0dce3727031890aaf651d5fb6d5.jpeg" width="300" height="150" alt="Color Wall"></a>
             <div class="caption">
               <h3> 
                 <a href="<?php echo WEB_TOOLS_HOST . 'colorwall/'; ?>" title="颜色墙" >在线颜色墙<br><small>by @dogstar</small></a>
@@ -48,7 +48,7 @@ require WEB_TOOLS_ROOT . '/header.html';
         
         <div class="col-sm-6 col-md-4 col-lg-3 ">
           <div class="thumbnail">
-            <a href="<?php echo WEB_TOOLS_HOST . 'timestamp/'; ?>" title="在线时间戳"><img class="lazy" src="http://webtools.qiniudn.com/index_thumb_timestamp_v2.jpg" width="300" height="150" alt="Color Wall"></a>
+            <a href="<?php echo WEB_TOOLS_HOST . 'timestamp/'; ?>" title="在线时间戳"><img class="lazy" src="http://cdn7.okayapi.com/89E670FD80BA98E7F7D7E81688123F32_20190612235740_6611f0708ed597fabc1f73adda234a95.jpeg" width="300" height="150" alt="Color Wall"></a>
             <div class="caption">
               <h3> 
                 <a href="<?php echo WEB_TOOLS_HOST . 'timestamp/'; ?>" title="时间戳" >在线时间戳<br><small>by @dogstar</small></a>
@@ -62,7 +62,7 @@ require WEB_TOOLS_ROOT . '/header.html';
         
         <div class="col-sm-6 col-md-4 col-lg-3 ">
           <div class="thumbnail">
-            <a href="<?php echo WEB_TOOLS_HOST . 'json/'; ?>" title="在线JSON解析" ><img class="lazy" src="http://webtools.qiniudn.com/index_thumb_v2.jpg" width="300" height="150" alt="Color Wall"></a>
+            <a href="<?php echo WEB_TOOLS_HOST . 'json/'; ?>" title="在线JSON解析" ><img class="lazy" src="http://cdn7.okayapi.com/89E670FD80BA98E7F7D7E81688123F32_20190612235756_9d86324447e708c0a3cad4444b0628ed.jpeg" width="300" height="150" alt="Color Wall"></a>
             <div class="caption">
               <h3> 
                 <a href="<?php echo WEB_TOOLS_HOST . 'json/'; ?>" title="在线JSON解析" >在线JSON解析<br><small>by @dogstar</small></a>
@@ -76,7 +76,7 @@ require WEB_TOOLS_ROOT . '/header.html';
         
         <div class="col-sm-6 col-md-4 col-lg-3 ">
           <div class="thumbnail">
-            <a href="<?php echo WEB_TOOLS_HOST . 'colortran/'; ?>" title="在线颜色转换" ><img class="lazy" src="http://webtools.qiniudn.com/index_thumb_colortran_v2.jpg" width="300" height="150" alt="Color Wall"></a>
+            <a href="<?php echo WEB_TOOLS_HOST . 'colortran/'; ?>" title="在线颜色转换" ><img class="lazy" src="http://cdn7.okayapi.com/89E670FD80BA98E7F7D7E81688123F32_20190613000256_f92750c7cb07cf00db9f30cf931b794b.jpeg" width="300" height="150" alt="Color Wall"></a>
             <div class="caption">
               <h3> 
                 <a href="<?php echo WEB_TOOLS_HOST . 'colortran/'; ?>" title="在线颜色转换" >在线颜色转换<br><small>by @dogstar</small></a>
@@ -86,17 +86,63 @@ require WEB_TOOLS_ROOT . '/header.html';
              </p>
            </div>
         </div>
-    </div> 
+    </div>
+</div>
+
+
+<div class="row">
+
+        <div class="col-sm-6 col-md-4 col-lg-3 ">
+        <div class="thumbnail">
+            <a href="<?php echo WEB_TOOLS_HOST . 'url/'; ?>" title="在线URIComponent转换"><img class="lazy" src="http://cdn7.okayapi.com/89E670FD80BA98E7F7D7E81688123F32_20190613000106_f4679022dc9e45e46f38bb02c7b1fe96.jpeg" width="300" height="150" alt="url"></a>
+            <div class="caption">
+                <h3>
+                    <a href="<?php echo WEB_TOOLS_HOST . 'url/'; ?>" title="在线URIComponent转换" >在线URIComponent转换<br><small>by @dogstar</small></a>
+                </h3>
+                <p>
+                    在线URIComponent转换：当输入字符串后，系统会url编码并转义用于分隔 URI 各个部分的标点符号,适用于url作为参数传递时。
+                </p>
+            </div>
+        </div>
+    </div>
 
 		<div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-            <a href="<?php echo WEB_TOOLS_HOST . 'md5/'; ?>" title="在线MD5转换"><img class="lazy" src="http://webtools.qiniudn.com/index_thumb_timestamp_v2.jpg" width="300" height="150" alt="Color Wall"></a>
+            <a href="<?php echo WEB_TOOLS_HOST . 'md5/'; ?>" title="在线MD5转换"><img class="lazy" src="http://cdn7.okayapi.com/89E670FD80BA98E7F7D7E81688123F32_20190613000035_8d5587cde6250e70bb5e72cccbcddeab.jpeg" width="300" height="150" alt="Color Wall"></a>
             <div class="caption">
                 <h3>
                     <a href="<?php echo WEB_TOOLS_HOST . 'md5/'; ?>" title="在线MD5转换" >在线MD5转换<br><small>by @sHuXnHs</small></a>
                 </h3>
                 <p>
                     在线MD5转换：当输入字符串后，系统会自动转换成相应的字符串Md5串
+                </p>
+            </div>
+        </div>
+    </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 ">
+        <div class="thumbnail">
+            <a href="<?php echo WEB_TOOLS_HOST . 'urls/'; ?>" title="在线URI转换"><img class="lazy" src="http://cdn7.okayapi.com/89E670FD80BA98E7F7D7E81688123F32_20190613000009_dccae914ffc481dfe27c87ce8605e6c4.jpeg" width="300" height="150" alt="url"></a>
+            <div class="caption">
+                <h3>
+                    <a href="<?php echo WEB_TOOLS_HOST . 'urls/'; ?>" title="在线URI转换" >在线URI转换<br><small>by @sHuXnHs</small></a>
+                </h3>
+                <p>
+                    在线URI转换：当输入字符串后，系统会整个URI进行编码，但不会对本身属于URI的特殊字符进行编码，例如、/ ？和#,适用于url跳转时。
+                </p>
+            </div>
+        </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 ">
+        <div class="thumbnail">
+            <a href="<?php echo WEB_TOOLS_HOST . 'base64/'; ?>" title="在线图片base64编码"><img class="lazy" src="http://cdn7.okayapi.com/89E670FD80BA98E7F7D7E81688123F32_20190613000508_3d446f9f740bede8b006ce0ee8d44068.jpeg" width="300" height="150" alt="url"></a>
+            <div class="caption">
+                <h3>
+                    <a href="<?php echo WEB_TOOLS_HOST . 'base64/'; ?>" title="在线图片base64编码" >在线图片base64编码<br><small>by @sHuXnHs</small></a>
+                </h3>
+                <p>
+                    在线图片base64编码：当上传图片后，系统会对图片进行base64编码。
                 </p>
             </div>
         </div>
