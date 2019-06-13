@@ -47,13 +47,24 @@ require WEB_TOOLS_ROOT . '/header.html';
     <div class="row">
     <h3>上传图片：</h3>
         <div class="row">
+            <div class="col-md-4">
             <input name="img" id="img" type="file" class="btn btn-default" onchange="changbase(event)">
+            </div>
+            <div class="col-md-8" id="preimg">
+                　<img id="previeImgShow" src="" alt="" width="160px" height="180px" />
+            </div>
         </div>
     </div>
     <div class="row">
     <h3>base64编码：</h3>
         <div class="row">
-            <textarea class="form-control" rows="3"  id="base" name="base" ></textarea>
+            <textarea class="form-control" rows="3"  id="base" name="base" onkeyup="getImage()"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <h3>base64编码后URIComponent转换（参数传递）<small>去掉data:image/png;base64</small>：</h3>
+        <div class="row">
+            <textarea class="form-control" rows="3"  id="baseurl" name="baseurl"></textarea>
         </div>
     </div>
     <br /><br />
@@ -80,7 +91,6 @@ function changbase(e)
 {
 
     try {
-        // var file = $("#img").files[0];
         var file = e.target.files[0];
         var reader = new FileReader();
         reader.readAsDataURL(file); // 读出 base64
@@ -88,11 +98,27 @@ function changbase(e)
             // 图片的 base64 格式, 可以直接当成 img 的 src 属性值
             var dataURL = reader.result;
             // 下面逻辑处理
-            $("#base").val(dataURL)
+            var img = document.getElementById('previeImgShow');
+            img.setAttribute('src', reader.result);
+            $("#base").val(dataURL);
+            var index = dataURL.lastIndexOf("\,");
+            urlbase = dataURL.substring(index+1, dataURL.length);
+            enurl = encodeURIComponent(urlbase);
+            $("#baseurl").val(enurl)
         };
 
     } catch (e) {
         $("#base").val('base64编码失败！');
+    }
+}
+
+function getImage() {
+    var str = $("#base").val();
+    try {
+        var img = document.getElementById('previeImgShow');
+        img.setAttribute('src', str);
+    } catch (e) {
+        $("#baseurl").val('图片获取失败！');
     }
 }
 
