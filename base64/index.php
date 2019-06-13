@@ -56,6 +56,12 @@ require WEB_TOOLS_ROOT . '/header.html';
             <textarea class="form-control" rows="3"  id="base" name="base" ></textarea>
         </div>
     </div>
+    <div class="row">
+        <h3>base64编码后URIComponent转换（参数传递）：</h3>
+        <div class="row">
+            <textarea class="form-control" rows="3"  id="baseurl" name="baseurl" ></textarea>
+        </div>
+    </div>
     <br /><br />
 
 </form>
@@ -88,7 +94,11 @@ function changbase(e)
             // 图片的 base64 格式, 可以直接当成 img 的 src 属性值
             var dataURL = reader.result;
             // 下面逻辑处理
-            $("#base").val(dataURL)
+            $("#base").val(dataURL);
+            var index = dataURL.lastIndexOf("\,");
+            urlbase = dataURL.substring(index+1, dataURL.length);
+            enurl = encodeURIComponent(urlbase);
+            $("#baseurl").val(enurl)
         };
 
     } catch (e) {
