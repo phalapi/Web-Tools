@@ -80,7 +80,13 @@ require WEB_TOOLS_ROOT . '/header.html';
             <td><?php  echo strtoupper(md5($outputMD5)) ; ?></td>
         </tr>
         <tr>
-            <td>MD5+base64</td>
+            <td>base64加密:</td>
+            <td><?php  echo base64_encode($inputMD5) ; ?></td>
+            <td>base64解密:</td>
+            <td><?php  echo base64_decode($inputMD5) ; ?></td>
+        </tr>
+        <tr>
+            <td>MD5+base64:</td>
             <td><?php  echo base64_encode($outputMD5) ; ?></td>
             <td></td>
             <td></td>
