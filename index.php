@@ -165,6 +165,21 @@ require WEB_TOOLS_ROOT . '/header.html';
 
     </div>
 
+    <div class="col-sm-6 col-md-4 col-lg-3 ">
+        <div class="thumbnail">
+            <a href="<?php echo WEB_TOOLS_HOST . 'ws/'; ?>" title="在线webSocket调试"><img class="lazy" src="http://cd7.yesapi.net/89E670FD80BA98E7F7D7E81688123F32_20191218211642_1eeb75bdde31a52438f9d4f37e5ac6c5.jpeg" width="300" height="150" alt="xml"></a>
+            <div class="caption">
+                <h3>
+                    <a href="<?php echo WEB_TOOLS_HOST . 'ws/'; ?>" title="在线webSocket调试" >webSocket在线调试<br><small>by @sHuXnHs</small></a>
+                </h3>
+                <p>
+                    在线webSocket调试。
+                </p>
+            </div>
+        </div>
+
+    </div>
+
 <?php
 require WEB_TOOLS_ROOT . '/footer.html';
 ?>
